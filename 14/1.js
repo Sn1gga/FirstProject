@@ -3,8 +3,6 @@
 var http = require('http');
 var fs = require('fs');
 
-//var file = fs.readFileSync('index.html');
-
 http.createServer(function(req, res) {
 	switch (req.url) {
 		case '/about':
@@ -20,8 +18,6 @@ http.createServer(function(req, res) {
 		case 'contact':
 			res.writeHeader(200, {"Content-Type": "text/html"});
 			fs.createReadStream('index.html').pipe(res);
-			///res.write(file);
-			//res.end(file);
 			break;
 		default:
 			res.write('Hello World!');
