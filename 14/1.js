@@ -15,10 +15,6 @@ http.createServer(function(req, res) {
         	req.connection.destroy;
 			res.end();
 			break;
-		case 'contact':
-			res.writeHeader(200, {"Content-Type": "text/html"});
-			fs.createReadStream('index.html').pipe(res);
-			break;
 		default:
 			res.write('Hello World!');
 			res.end();
