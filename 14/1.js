@@ -15,6 +15,12 @@ http.createServer(function(req, res) {
         	req.connection.destroy;
 			res.end();
 			break;
+		case '/file':
+			fs.readFile('data.txt', function(err, data) {
+				res.write(data);
+			});
+			res.end();
+			break;
 		default:
 			res.write('Hello World!');
 			res.end();
