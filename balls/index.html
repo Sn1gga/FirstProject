@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Balls</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		.tab {
+			height: 120px;
+			border: 2px blue solid;
+		}
+		.ball {
+			margin-top:10px;
+			display: inline-block;
+			margin-left: 5px;
+			width: 100px;
+			height: 100px;
+			border-radius: 50%;
+		}
+		.red {
+			background-color: red;
+		}
+		.green {
+			background-color: green;
+		}
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			let greenCreated = 0;
+			let greenDestroyed = 0;
+			let globalCount = 0;
+			let date = new Date();
+			let start = date.getTime();
+			let stop;
+			let currTime;
+
+			$('button').click(function() {
+				$('.tab').append(getBall());
+			});
+
+			$('body').on('click', '.ball', function() {
+				if($(this).hasClass('green')) {
+					$(this).remove();
+					greenDestroyed++;
+					globalCount++;
+				} else if ($(this).hasClass('red')) {
+					$('.tab').append(getBall());
+					$('.tab').append(getBall());
+				};
+				if (greenCreated === greenDestroyed) {
+					$('.ball').each(function() {
+						$(this).removeClass('red').addClass('green');
+					});
+					greenCreated = $('.tab').children('div').length;
+					greenDestroyed = 0;
+				};
+				if ($('.tab').children('div').length === 0 ) {
+					let date1 = new Date();
+					stop = date1.getTime();
+					currTime = (stop - start) / 1000;
+					alert('Conratz! You win! You destroyed ' + globalCount + ' green balls! You wasted ' + currTime + ' seconds for playing this game!' );
+				};
+			});
+
+			function getBall() {
+				let ball;
+				if(Math.random() > 0.5) {
+					ball = '<div class="ball green"></div>';
+					greenCreated++;
+				} else {
+					ball = '<div class="ball red"></div>';
+				};
+				return ball;
+			};
+		});
+	</script>
+</head>
+<body>
+	<div class="tab">
+	</div>
+	<button>Add new ball</button>
+</body>
+</html>
