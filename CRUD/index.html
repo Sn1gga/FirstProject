@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>CRUD</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<header>
+		<br>
+		<br>
+		<h1>CRUD</h1>
+		<h5>Create | Read | Update | Delete</h5>
+	</header>
+	<div class="content">
+		<div class="main-container">
+			<div class="read">
+				<br>
+				<h3><p class="text-read">Read</p></h3>	
+				<br>
+				<table cellspacing="0px" border="0px" width="70%">
+					<tr>
+						<th>ID</th>
+						<th>First Name</th>
+						<th>Last Name</th>
+						<th>Age</th>
+					</tr>
+				</table>
+				<br>
+				<button class="add">Add person</button>
+				<br>
+				<br>
+			</div>
+			<div class="create">
+				<br>
+				<form class="create-form">
+					<p class="text-create">Create</p>
+					<br>
+					<p>Enter your first name:</p>
+					<input type="text" name="firstName">
+					<br>
+					<br>
+					<p>Enter your last name:</p>
+					<input type="text" name="lastName">
+					<br>
+					<br>
+					<p>Enter your age:</p>
+					<input type="text" name="age">	
+					<br>	
+					<br>
+					<input id="add" type="button" name="" value="Submit">
+				</form>
+				<input id="back" type="button" name="" value="Back">	
+			</div>
+			<div class="update">
+				<br>
+				<form class="update-form">
+					<p class="text-create">Update</p>
+					<br>
+					<p>Enter your first name:</p>
+					<input type="text" name="firstName">
+					<br>
+					<br>
+					<p>Enter your last name:</p>
+					<input type="text" name="lastName">
+					<br>
+					<br>
+					<p>Enter your age:</p>
+					<input type="text" name="age">	
+					<br>	
+					<br>
+					<br>
+					<input id="change" type="button" name="" value="Submit">
+				</form>
+				<input id="back1" type="button" name="" value="Back">
+			</div>
+		</div>
+	</div>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript" src="main.js"></script>
+</body>
+</html>

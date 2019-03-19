@@ -1,0 +1,28 @@
+{
+  "persons": [
+    {
+      "firstName": "Ivan",
+      "lastName": "Ivanov",
+      "age": "2",
+      "id": 5
+    },
+    {
+      "firstName": "Антон",
+      "lastName": "Снигур",
+      "age": "23",
+      "id": 6
+    },
+    {
+      "firstName": "Adam",
+      "lastName": "Lan",
+      "age": "123",
+      "id": 7
+    },
+    {
+      "firstName": "Oleg",
+      "lastName": "Ivanov",
+      "age": "11",
+      "id": 8
+    }
+  ]
+}
